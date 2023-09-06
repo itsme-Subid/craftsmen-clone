@@ -1,3 +1,4 @@
+import Scroller from "@/components/scroller";
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -17,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${satoshi.className} mx-2`}>{children}</body>
+      <Scroller>
+        <body data-scroll-container className={`${satoshi.className} mx-2`}>
+          {children}
+        </body>
+      </Scroller>
     </html>
   );
 }
